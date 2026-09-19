@@ -149,6 +149,22 @@ Then simply declare it by version in any project:
 }
 ```
 
+#### Option C: Direct GitHub Git Dependency
+Anyone can consume this package directly from GitHub without cloning it manually:
+```json
+{
+    "name": "my-game",
+    "targetType": "executable",
+    "buildOptions": ["betterC"],
+    "dependencies": {
+        "flecs-d": {
+            "repository": "git+https://github.com/Luckyoriginal/flecs-d.git",
+            "version": "~master"
+        }
+    }
+}
+```
+
 ### 2. Run the Included DUB Example
 
 A working DUB project is provided under [`examples/dub_example/`](file:///home/lucky/project/d/flecs-d/examples/dub_example):

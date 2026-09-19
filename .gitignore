@@ -1,0 +1,13 @@
+# Build outputs and binaries
+bin/
+*.o
+*.a
+*.so
+out.txt
+core_features
+basics
+test_*
+
+# DUB temporary directories and lock files
+.dub/
+dub.selections.json
