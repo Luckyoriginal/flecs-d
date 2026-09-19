@@ -1,0 +1,9 @@
+{
+    "name": "flecs-dub-example",
+    "description": "Example DUB project using flecs-d package in Better-C mode",
+    "targetType": "executable",
+    "buildOptions": ["betterC"],
+    "dependencies": {
+        "flecs-d": { "path": "../../" }
+    }
+}
