@@ -1,0 +1,9 @@
+{
+    "name": "registry-test-app",
+    "description": "Testing flecs-d downloaded directly from code.dlang.org registry",
+    "targetType": "executable",
+    "buildOptions": ["betterC"],
+    "dependencies": {
+        "flecs-d": "~>0.1.0"
+    }
+}

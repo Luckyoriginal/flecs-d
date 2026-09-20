@@ -8,6 +8,7 @@ core_features
 basics
 test_*
 flecs-dub-example
+registry-test-app
 
 # DUB temporary directories and lock files
 .dub/
