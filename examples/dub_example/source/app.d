@@ -25,7 +25,9 @@ extern(C) int main() {
 	World world = World.create();
 	scope(exit) world.destroy();
 	
-	auto parent = world.entity();
+	Entity room = world.entity();
+	auto parent = world.entity()
+		.child_of(room);
 
 	// 2. Set Singleton
 	world.set(GameConfig(32, true));
