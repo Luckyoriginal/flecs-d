@@ -1,7 +1,5 @@
 module flecs.c;
 
-import core.stdc.config : c_long, c_ulong;
-
 extern(C) @nogc nothrow:
 
 // ============================================================================
@@ -239,7 +237,8 @@ struct ecs_iter_t {
 
     ecs_flags32_t flags;
     ecs_entity_t interrupted_by;
-    byte[112] priv_;
+    enum ECS_ITER_PRIV_SIZE = (size_t.sizeof == 8) ? 112 : 56;
+    byte[ECS_ITER_PRIV_SIZE] priv_;
 
     ecs_iter_next_action_t next;
     ecs_iter_action_t callback;

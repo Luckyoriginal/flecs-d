@@ -3,9 +3,12 @@
     "description": "Ergonomic Flecs ECS bindings for the D programming language (Better-C compatible)",
     "authors": ["lucky"],
     "license": "MIT",
-    "targetType": "sourceLibrary",
+    "targetType": "library",
     "sourcePaths": ["source"],
     "importPaths": ["source"],
     "buildOptions": ["betterC"],
-    "lflags": ["-L/usr/local/lib64", "-Wl,-rpath=/usr/local/lib64", "-lflecs"]
+    "preBuildCommands-posix": [
+        "$PACKAGE_DIR/c/build_flecs.sh"
+    ],
+    "sourceFiles": ["c/libflecs.a"]
 }

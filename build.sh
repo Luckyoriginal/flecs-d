@@ -3,13 +3,14 @@ set -euo pipefail
 
 mkdir -p bin
 
+# 1. Build vendored Flecs C library if needed
+./c/build_flecs.sh
+
 echo "==> [1/3] Building and running basics.d..."
 ldc2 -betterC -O2 -Isource \
-    -L-L/usr/local/lib64 \
-    -L-rpath=/usr/local/lib64 \
-    -L-lflecs \
     source/flecs/c.d \
     source/flecs/package.d \
+    c/libflecs.a \
     examples/basics.d \
     -of=bin/basics
 ./bin/basics
@@ -17,11 +18,9 @@ ldc2 -betterC -O2 -Isource \
 echo ""
 echo "==> [2/3] Building and running core_features.d (full ECS test suite)..."
 ldc2 -betterC -O2 -Isource \
-    -L-L/usr/local/lib64 \
-    -L-rpath=/usr/local/lib64 \
-    -L-lflecs \
     source/flecs/c.d \
     source/flecs/package.d \
+    c/libflecs.a \
     examples/core_features.d \
     -of=bin/core_features
 ./bin/core_features
